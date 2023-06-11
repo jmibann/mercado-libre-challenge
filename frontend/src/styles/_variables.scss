@@ -1,0 +1,36 @@
+$colors: (
+  mlYellow: #FFE600,
+  mlBlack: #333333,
+  mlDarkGrey: #666666,
+  mlGrey: #999999,
+  mlLightGrey: #EEEEEE,
+  mlBlue: #3483FA,
+);
+
+$base-padding: 16px;
+$base-radius: 4px;
+
+@function color($color-name) {
+  @return map-get($colors , $color-name);
+};
+
+$font-sizes: (
+  xs: 12px,
+  sm: 14px,
+  md: 18px,
+  lg: 24px,
+  xl: 46px,
+  description-text: 16px,
+  description-title: 28px,
+);
+
+@function size($size) {
+  @return map-get($font-sizes, $size)
+}
+
+@mixin flexPosition($justCont: center, $alignItem: center, $flexDirection: row){
+  display: flex;
+  justify-content: $justCont;
+  align-items: $alignItem;
+  flex-direction: $flexDirection;
+}

@@ -1,0 +1,77 @@
+.results{
+  flex:1;
+  @include flexPosition(start, center, column);
+  width: 100%;
+  background-color: color(mlLightGrey);
+
+  &-item {
+    @include flexPosition(space-between, start);
+    width: 80%;
+    cursor: pointer;
+    margin-bottom: 2*$base-padding;
+    border: 1px solid color(mlLightGrey);
+    border-width: 0 0 1px 0;
+    background-color: white;
+  }
+
+  &-section {
+    @include flexPosition(flex-start, center);
+    width: 80%;
+    height: 3rem;
+    color: color(mlGrey);
+  }
+
+  &-list {
+    @include flexPosition();
+    width: 100%;
+    height: 180px;
+    justify-content: start;
+    align-items: center;
+    padding: $base-padding;
+    border-radius: $base-radius;
+
+    &-image {
+      @include flexPosition();
+      width: 20%;
+      max-width: 180px;
+      height: 180px;
+      border-radius: $base-radius;
+      overflow: hidden;
+      margin-right: 20px;
+    }
+
+    &-description {
+      @include flexPosition(space-between);
+      flex:1;
+      height: 100%;
+      border-radius: $base-radius;
+
+      &-left {
+        @include flexPosition(start, start, column);
+        width: 60%;
+        height: 100%;
+        text-align: left;
+      };
+
+      &-right {
+        @include flexPosition(center, start);
+        width: 20%;
+        height: 100%;
+        background-color: white;
+      }
+    }
+
+    &-price {
+      font-size: size(lg);
+      padding-top: $base-padding;
+      padding-bottom: 2*$base-padding;
+    }
+
+    &-location {
+      font-size: size(xs);
+      color: color(mlDarkGrey);
+      padding-top: $base-padding;
+      padding-bottom: $base-padding;
+    }
+  }
+}

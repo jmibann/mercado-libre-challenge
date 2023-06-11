@@ -1,0 +1,74 @@
+.description {
+  @include flexPosition(start, center, column);
+  width: 80%;
+  
+  &-container {
+    @include flexPosition(start, center, column);
+    flex: 1;
+    width: 100%;
+    padding-top: 2*$base-padding;
+    background-color: white;
+    }
+
+    &-row1{
+      @include flexPosition(space-between, center, row);
+      width: 100%;
+      
+      &-left {
+        @include flexPosition();
+      }
+
+      &-right {
+        @include flexPosition(start, start, column);
+        width: 20%;
+        height: 100%;
+        padding-left: 2*$base-padding;
+        text-align: left
+      }
+    }
+
+    &-row2{
+      @include flexPosition(start, start, column);
+      flex: 1;
+      width: 100%;
+
+      &-product {
+        padding-top: 2*$base-padding;
+        padding-bottom: 2*$base-padding;
+        font-size: size(description-title);
+      }
+
+      &-text {
+        padding-bottom: 2*$base-padding;
+        font-size: size(description-text);
+        color: color(mlGrey)
+      }
+    }
+
+    &-condition {
+      padding-top: 2*$base-padding;
+      padding-bottom: $base-padding;
+      font-size: size(sm);
+    }
+
+    &-title {
+      padding-bottom: 2*$base-padding;
+      font-size: size(lg);
+    }
+
+    &-price {
+      padding-bottom: 2*$base-padding;
+      font-size: size(xl);
+    }
+
+    &-button {
+      font-size: size(md);
+      background-color: color(mlBlue);
+      color: white;
+      border: 0;
+      border-radius: $base-radius;
+      padding: 10px;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+}

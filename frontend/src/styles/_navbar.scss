@@ -1,0 +1,74 @@
+.navbar {
+  @include flexPosition();
+  width: 100%;
+  background-color: color(mlYellow);
+
+  &-width{
+    @include flexPosition(flex-start);
+    width: 80%;
+    height: 3.5rem;
+    padding: 1rem 0;
+    box-sizing: border-box;
+  }
+
+  &-logo {
+    height: 2rem;
+    cursor: pointer;
+  };
+
+  &-input-container-focused {
+    @include flexPosition();
+    flex: 1;
+    margin-left: 0.8rem;
+    border: $base-radius solid blue;
+    border-radius: $base-radius;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  &-input-container-unfocused {
+    @include flexPosition();
+    flex: 1;
+    margin-left: 0.8rem;
+    border: $base-radius solid color(mlYellow);
+    border-radius: $base-radius;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  &-input {
+    @include flexPosition();
+    flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-radius: $base-radius;
+    padding: 0.6rem 0.5rem;
+    border: 0;
+    font-size: size(md);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-button {
+    @include flexPosition();
+    border-width: 0;
+    background-color: white;
+    border-top-right-radius: $base-radius;
+    border-bottom-right-radius: $base-radius;
+    padding: 0;
+    cursor: pointer;
+
+    &:active{
+      transform: translateY(2px);
+    }
+  }
+
+  &-magnifier {
+    height: 1rem;
+    width: 1rem;
+    padding-right: 0.5rem;
+    fill: color(letter);
+  }
+}
