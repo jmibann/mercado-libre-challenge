@@ -16,6 +16,8 @@
       
       &-left {
         @include flexPosition();
+        width: 680px;
+        height: 680px;
       }
 
       &-right {

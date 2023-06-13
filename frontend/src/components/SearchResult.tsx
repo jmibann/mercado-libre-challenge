@@ -1,4 +1,5 @@
 import React,{ useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import { Section, ItemList } from './index'
 import { fetchItems } from '../api'
@@ -6,13 +7,13 @@ import { ItemsSearchResult } from '../types';
 
 const SearchResult: React.FC<{}> = () => {
   const [items, setItems] = useState<ItemsSearchResult>();
-  const urlParams = new URLSearchParams(window.location.search);
-  const myParam = urlParams.get('search');
+  const [URLSearchParams] = useSearchParams();
+  const keyword = URLSearchParams.get('search')
 
   useEffect(() => {
-    if(myParam)
-      fetchItems(myParam).then(({data}) => setItems(data));
-  },[myParam]);
+    if(keyword)
+      fetchItems(keyword).then(({data}) => setItems(data));
+  },[keyword]);
 
   return (
     <div className='results'>

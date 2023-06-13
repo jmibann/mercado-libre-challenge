@@ -14,15 +14,18 @@ const Header: React.FC<HeaderProps> = () => {
   const navigate = useNavigate();
 
   const search = (keyword: string) => navigate(`/items?search=${keyword}`);
+  const clearInput = () => setInput('');
 
   const onKeyDownHandler = (event: React.KeyboardEvent<HTMLInputElement> ) => {
     if(event.key === 'Enter' && input){
+      clearInput();
       search(input);
     }
   };
 
   const onClickHandler = () => {
     if(input){
+      clearInput();
       search(input);
     }
   }

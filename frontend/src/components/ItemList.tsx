@@ -5,8 +5,7 @@ import { Item } from '../types'
 
 const ItemList: React.FC<Item> = ({ id, picture, price, title}) => {
   const navigate = useNavigate();
-
-  const onClickHandler = (id: string) => navigate(`/items/${id}}`);
+  const onClickHandler = (id: string) => navigate(`/items/${id}`);
 
     return (
       <div className='results-item' onClick={() => onClickHandler(id)}>

@@ -24,10 +24,17 @@ export interface Item {
  picture:       string;
  price:         Price;
  title:         string;
+ sold_quantity: number;
+ description: string; 
 }
 
 export interface ItemsSearchResult {
     author:     Author;
     categories: string[];
     items:      Item[];
+   }
+
+export interface ItemsDetails {
+    author:     Author;
+    item:      Item;
    }

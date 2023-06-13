@@ -65,7 +65,7 @@ const formatDescription = (data) => {
       id: data?.id,
       price,
       title: data?.title,
-      picture: data?.picture?.pop(),
+      picture: data?.pictures?.pop()?.secure_url,
       condition: data?.condition,
       free_shipping: data?.shipping?.free_shipping,
       sold_quantity: data?.sold_quantity,
@@ -74,8 +74,7 @@ const formatDescription = (data) => {
   }
 }
 
-
-const fetchItem = (req, res) => {
+const searchItem = (req, res) => {
   const { id } = req.params;
 
   if(!id){
@@ -90,6 +89,6 @@ const fetchItem = (req, res) => {
 }
 
 module.exports = {
-  fetchItem,
+  searchItem,
   searchItems,
 }
