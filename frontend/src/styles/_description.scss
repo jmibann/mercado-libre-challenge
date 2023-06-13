@@ -61,6 +61,10 @@
     &-price {
       padding-bottom: 2*$base-padding;
       font-size: size(xl);
+
+      &-super {
+        font-size: size(lg);
+      }
     }
 
     &-button {

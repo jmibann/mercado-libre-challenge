@@ -26,6 +26,7 @@ export interface Item {
  title:         string;
  sold_quantity: number;
  description: string; 
+ categoryPath: string[],
 }
 
 export interface ItemsSearchResult {

@@ -59,6 +59,8 @@ const formatDescription = (data) => {
     decimals: Number(data.price),
   };
   
+  const categoryPath = data?.categoryPath.map(({name}) => name);
+
   return {
     author,
     item: {
@@ -70,6 +72,7 @@ const formatDescription = (data) => {
       free_shipping: data?.shipping?.free_shipping,
       sold_quantity: data?.sold_quantity,
       description: data?.title,
+      categoryPath,
     }
   }
 }
@@ -83,8 +86,18 @@ const searchItem = (req, res) => {
     })
   } 
   
+  let itemData;
+  
   return itemsAPI.getItem(id)
-    .then(data => res.send(formatDescription(data)))
+    .then( data => {
+      itemData = data;
+      return itemsAPI.getCategoryPath(data?.category_id);
+    })
+    .then((categoryPath) => {
+      return res.send(formatDescription({
+      categoryPath,
+      ...itemData,
+    }))} )
     .catch(error => res.status(500).send(error))
 }
 

@@ -44,4 +44,6 @@ const getPosts = (query) => getData('/sites/MLA/search?q=​'.concat(`=?${query}
 
 const getItem = (id) => getData(`/items/${id}`);
 
-module.exports = { getItem, getPosts };
+const getCategoryPath = (id) => getData(`/categories/${id}`).then(({path_from_root}) => path_from_root);
+
+module.exports = { getItem, getPosts, getCategoryPath };

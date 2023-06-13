@@ -1,13 +1,14 @@
 import React from 'react';
 
 interface SectionProps {
-
+  categoryPath?: string[],
 };
 
-const Section: React.FC<SectionProps> = () => {
+const Section: React.FC<SectionProps> = ({categoryPath}) => {
+  const pathway = categoryPath ? categoryPath.join(' > ') : ''
     return (
     <div className='results-section'>
-      <span>Rubro</span>
+      <span>{pathway}</span>
     </div>
   );
 };

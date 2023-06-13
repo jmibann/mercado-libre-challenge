@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { Section } from '../components';
@@ -7,11 +7,33 @@ import { Item } from '../types';
 
 const ItemDescription: React.FC<{}> = () => {
   const [item, setItem] = useState<Item>();
-  let { id } = useParams();
+  const { id } = useParams();
+  const price = useRef({
+    decs: '',
+    cents: '',
+  });
+
+
+  const formatPrice = ({amount, currency} : {amount: number, currency: string}) => {
+    const formatting_options = {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 2,
+    };
+    const formatter = new Intl.NumberFormat( "es-AR", formatting_options);
+  
+    const formattedPrice = formatter.format(amount);
+    const [decs, cents] = formattedPrice.split(',')
+    
+    return {decs, cents};
+   }
 
   useEffect(() => {
     if(id)
-      fetchItem(id).then(({ item }) => setItem(item));
+      fetchItem(id).then(({ item }) => {
+        price.current = formatPrice(item.price);
+        setItem(item);
+      });
   }, [id]);
 
   return (
@@ -19,7 +41,7 @@ const ItemDescription: React.FC<{}> = () => {
       { 
         item &&
           <Fragment>
-            <Section />
+            <Section categoryPath={item?.categoryPath}/>
             <div className='description-container'>
               <div className='description-row1'>
                 <div className='description-row1-left'>
@@ -28,7 +50,7 @@ const ItemDescription: React.FC<{}> = () => {
                 <div className='description-row1-right'>
                   <span className='description-condition'> {item?.condition} - {item?.sold_quantity} vendidos</span>
                   <span className='description-title'> {item?.title} </span>
-                  <span className='description-price'> ${item?.price?.amount} </span>
+                  <span className='description-price'> {price.current.decs} <sup className='description-price-super'>{price.current.cents}</sup></span>
                   <button className='description-button'> Comprar </button>
                 </div>
               </div>
