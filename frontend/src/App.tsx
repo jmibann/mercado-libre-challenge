@@ -4,12 +4,9 @@ import { router } from './router';
 
 import './styles/main.scss';
 
-import { Header } from './components';
-
 function App() {
   return (
     <div className='App'>
-      {/* <Header /> */}
       <RouterProvider router={router} />
     </div>
   );
