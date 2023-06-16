@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you will find 3 folders:<br />
+In the project directory, you will find 3 folders:<br /><br />
   1- frontend<br />
   2- backend<br />
   3- Challenge Definition<br />
