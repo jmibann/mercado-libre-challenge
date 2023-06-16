@@ -9,7 +9,7 @@ In the project directory, you will find 3 folders:<br /><br />
 
 Challenge Definition contains statement of the project 
 Frontend and backend contains each project to solve problem explained in the statement. 
-
+Backend docs can be found at [HERE]([https://github.com/facebook/create-react-app](https://developers.mercadolibre.com.ar/es_ar/categorias-y-atributos)). 
 ### `npm start`
 Open a terminal for each project (frontend and backend) and run 'npm start' 
 
