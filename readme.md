@@ -19,8 +19,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-Backend runs on port 3500 if no .env file is created and specifies a different one. <br />
+Backend runs on port 8080 if no .env file is created and specifies a different one. <br />
 [http://localhost:3500](http://localhost:3000) to view it in the browser.
+
+note: Take into account that changing backend port, also a change at frontend project is required to avoid CORS error.
 
 ### `npm test`
 
