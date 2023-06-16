@@ -1,15 +1,20 @@
+export const FIRST_ITEM_TITLE = "Gel Liquido Alisador Silkey Easy Brush Mucize Lacio Perfecto";
+
+export const FIRST_ITEM =   {
+  id: "MLA1346837911",
+  title: FIRST_ITEM_TITLE,
+  picture: "http://http2.mlstatic.com/D_924695-MLA41802569023_052020-I.jpg",
+  condition: "Nuevo",
+  free_shipping: false,
+  price: {
+      currency: "ARS",
+      amount: 1390
+  }
+};
+
 export const MOCKED_SEARCH_RESULT = [
-  {
-    id: "MLA1346837911",
-    title: "Gel Liquido Alisador Silkey Easy Brush Mucize Lacio Perfecto",
-    picture: "http://http2.mlstatic.com/D_924695-MLA41802569023_052020-I.jpg",
-    condition: "Nuevo",
-    free_shipping: false,
-    price: {
-        currency: "ARS",
-        amount: 1390
-    }
-  },
+  {...FIRST_ITEM}
+  ,
   {
     id: "MLA1155855795",
     title: "Lipotermic Gel Caliente Reductor Termoactivo Liposoma Idraet Tipo De Envase Pote Tipos De Piel Normal",
