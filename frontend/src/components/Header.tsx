@@ -4,13 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../images/logo.png';
 import { ReactComponent as Magnifier }  from '../images/magnifier.svg';
 
-interface HeaderProps {
-
-};
-
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<{}> = () => {
   const [isFocused, setIsFocused] = useState(false);
-  const [input, setInput] = useState<string>();
+  const [input, setInput] = useState<string>('');
   const navigate = useNavigate();
 
   const search = (keyword: string) => navigate(`/items?search=${keyword}`);
@@ -48,9 +44,10 @@ const Header: React.FC<HeaderProps> = () => {
             onKeyDown={onKeyDownHandler}
             className="navbar-input"
             placeholder="Buscar productos, marcas y mas..."
+            data-testid="search-input"
             />
           <button className="navbar-button" onClick={onClickHandler}>
-            <Magnifier className="navbar-magnifier" />
+            <Magnifier className="navbar-magnifier" data-testid="magnifier"/>
           </button>
         </div>
       </div>

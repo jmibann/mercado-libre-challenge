@@ -8,7 +8,7 @@ const ItemList: React.FC<Item> = ({ id, picture, price, title}) => {
   const onClickHandler = (id: string) => navigate(`/items/${id}`);
 
     return (
-      <div className='results-item' onClick={() => onClickHandler(id)}>
+      <div className='results-item' onClick={() => onClickHandler(id)} data-testid='list-item'>
         <div className='results-list-image'>
           <img src={picture} width={180} height={180} alt={title}/>
         </div>

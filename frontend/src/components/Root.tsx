@@ -3,11 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import Header from "./Header";
 
-interface RootProps {
-
-};
-
-const Root: React.FC<RootProps> = () => {
+const Root: React.FC<{}> = () => {
     return (
       <Fragment>
         <Header />
