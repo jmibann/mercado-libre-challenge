@@ -7,9 +7,10 @@ In the project directory, you will find 3 folders:<br /><br />
   2- backend<br />
   3- Challenge Definition<br />
 
-Challenge Definition contains statement of the project 
-Frontend and backend contains each project to solve problem explained in the statement. 
-Backend docs can be found at [HERE]([https://github.com/facebook/create-react-app](https://developers.mercadolibre.com.ar/es_ar/categorias-y-atributos). 
+Challenge Definition contains statement of the project. <br />
+Frontend and backend contains each project to solve problem explained in the statement. <br />
+Backend docs can be found at [HERE]([https://github.com/facebook/create-react-app](https://developers.mercadolibre.com.ar/es_ar/categorias-y-atributos). <br />
+
 ### `npm start`
 Open a terminal for each project (frontend and backend) and run 'npm start' 
 
