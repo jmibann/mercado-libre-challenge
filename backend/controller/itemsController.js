@@ -36,9 +36,13 @@ const formatSearchResult = (data) => {
   };
 }
 
-const searchItems = (req, res) => {
-  const query = req.query.q;
+const WHITELIST = ['http://localhost:3000'];
 
+const searchItems = (req, res) => {
+  res.set('Access-Control-Allow-Origin', WHITELIST);
+  
+  const query = req.query.q;
+  
   if(!query){
     return res.status(400).json({
       'message': `item : ${query} not found.`
@@ -78,6 +82,8 @@ const formatDescription = (data) => {
 }
 
 const searchItem = (req, res) => {
+  res.set('Access-Control-Allow-Origin', WHITELIST);
+
   const { id } = req.params;
 
   if(!id){

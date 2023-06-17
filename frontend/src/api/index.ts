@@ -2,6 +2,8 @@ import axios from 'axios';
 
 import { ItemsSearchResult, ItemsDetails } from '../types'
 
-export const fetchItems = (item: string) => axios.get<ItemsSearchResult>(`/api/items?q=${item}`);
+const BASE_URL = 'http://localhost:8080';
 
-export const fetchItem = (id: string) => axios.get<ItemsDetails>(`/api/items/${id}`).then(({data}) => data);
+export const fetchItems = (item: string) => axios.get<ItemsSearchResult>(`${BASE_URL}/api/items?q=${item}`);
+
+export const fetchItem = (id: string) => axios.get<ItemsDetails>(`${BASE_URL}/api/items/${id}`).then(({data}) => data);
